@@ -35,13 +35,12 @@ public class Main {
         task10();
     }
 
-    public static List<Box> getBox(List<Box> box) {
+    public static void getBox(List<Box> box) {
         box.add(new Box(100, 2, 3, 4));
         box.add(new Box(500, 6, 7, 8));
         box.add(new Box(201, 15, 14, 9));
         box.add(new Box(199, 16, 13, 10));
         box.add(new Box(400, 17, 12, 11));
-        return box;
     }
 
     public static void task1() {
@@ -101,7 +100,7 @@ public class Main {
     }
 
     public static void task3() {
-        TreeSet boxTreeSet = new TreeSet();
+        TreeSet<Box> boxTreeSet = new TreeSet<>();
         boxTreeSet.add(new Box(100, 2, 3, 200));
         boxTreeSet.add(new Box(5, 6, 7, 200));
         boxTreeSet.add(new Box(18, 15, 14, 5));
@@ -110,6 +109,7 @@ public class Main {
         for (Object box : boxTreeSet) {
             System.out.println(box);
         }
+        System.out.println();
     }
 
     public static void task4() {
@@ -126,6 +126,7 @@ public class Main {
         System.out.println(secondSet);
         union(firstSet, secondSet, result);
         intersect(firstSet, secondSet, result);
+        System.out.println();
     }
 
     public static void union(Set<?>... set) {
@@ -168,10 +169,11 @@ public class Main {
         for (Box box : filterWeightBox) {
             System.out.println(box);
         }
+        System.out.println();
     }
 
     public static void task7() {
-        Map<String, Object> toyMap = new HashMap<>();
+        Map<String, Toy> toyMap = new HashMap<>();
         toyMap.put("машинка", new Toy(12, "с большими колесами", true));
         toyMap.put("мишка", new Toy(342, "плюшевый", false));
         toyMap.put("кукла", new Toy(10, "мужского пола", false));
@@ -185,21 +187,21 @@ public class Main {
 
     }
 
-    public static void entrySet(Map toyMap) {
+    public static void entrySet(Map<String,Toy> toyMap) {
         for (Object toy : toyMap.entrySet()) {
             System.out.println(toy);
         }
         System.out.println();
     }
 
-    public static void keySet(Map toyMap) {
+    public static void keySet(Map<String,Toy> toyMap) {
         for (Object toy : toyMap.keySet()) {
             System.out.println(toy);
         }
         System.out.println();
     }
 
-    public static void values(Map toyMap) {
+    public static void values(Map<String,Toy> toyMap) {
         for (Object toy : toyMap.values()) {
             System.out.println(toy);
         }
@@ -252,6 +254,7 @@ public class Main {
         pets.put("Какаду", new Parrot("красно-желтый", 2, false));
         pets.put("Рэкс", new Dog("серый", 12, true));
         printPet(pets);
+        System.out.println();
     }
 
     public static void printPet(Map<String, Pet> pets) {
