@@ -6,7 +6,7 @@ public class Box implements Comparable<Box> {
     int width;
     int height;
 
-    Box(int weight, int length, int width, int height) {
+    Box(final int weight, final int length, final int width, final int height) {
         this.weight = weight;
         this.length = length;
         this.width = width;
@@ -24,7 +24,7 @@ public class Box implements Comparable<Box> {
     }
 
     @Override
-    public int compareTo(Box box) {
+    public int compareTo(final Box box) {
         int compare = this.height - box.height;
         if (compare == 0) {
             return this.weight - box.weight;

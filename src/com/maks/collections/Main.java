@@ -14,39 +14,40 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("1 задание");
-         task1();
+        task1();
         System.out.println("2 задание");
-         task2();
+        task2();
         System.out.println("3 задание");
-         task3();
+        task3();
         System.out.println("4 задание");
-         task4();
+        task4();
         System.out.println("5 задание");
-         task5();
+        task5();
         System.out.println("6 задание");
-         task6();
+        task6();
         System.out.println("7 задание");
-         task7();
+        task7();
         System.out.println("8 задание");
-         task8();
+        task8();
         System.out.println("9 задание");
-         task9();
+        task9();
         System.out.println("10 задание");
         task10();
     }
 
-    public static void getBox(List<Box> box) {
+    public static List<Box> createBox() {
+        ArrayList<Box> box = new ArrayList<>();
         box.add(new Box(100, 2, 3, 4));
         box.add(new Box(500, 6, 7, 8));
         box.add(new Box(201, 15, 14, 9));
         box.add(new Box(199, 16, 13, 10));
         box.add(new Box(400, 17, 12, 11));
+        return box;
     }
 
     public static void task1() {
         //Создать динамический массив, содержащий объекты класса Box
-        ArrayList<Box> boxArray = new ArrayList<>();
-        getBox(boxArray);
+       List<Box> boxArray = createBox();
 
         //Распечатать его содержимое используя for each.
         for (Object print : boxArray) {
@@ -72,8 +73,7 @@ public class Main {
 
     public static void task2() {
         //1 способ, Перебор
-        ArrayList<Box> boxList = new ArrayList<>();
-        getBox(boxList);
+        List<Box> boxList = createBox();;
         Box[] boxArray1 = new Box[boxList.size()];
         for (int i = 0; i < boxList.size(); i++) {
             boxArray1[i] = boxList.get(i);
@@ -100,7 +100,7 @@ public class Main {
     }
 
     public static void task3() {
-        TreeSet<Box> boxTreeSet = new TreeSet<>();
+        Set<Box> boxTreeSet = new TreeSet<>();
         boxTreeSet.add(new Box(100, 2, 3, 200));
         boxTreeSet.add(new Box(5, 6, 7, 200));
         boxTreeSet.add(new Box(18, 15, 14, 5));
@@ -129,7 +129,7 @@ public class Main {
         System.out.println();
     }
 
-    public static void union(Set<?>... set) {
+    public static void union(final Set<?>... set) {
         set[2].clear();
         set[2].addAll((HashSet) set[0]);
         set[2].addAll((HashSet) set[1]);
@@ -161,8 +161,7 @@ public class Main {
     }
 
     public static void task6() {
-        List<Box> boxArray = new ArrayList<>();
-        getBox(boxArray);
+        List<Box> boxArray = createBox();
         List<Box> filterWeightBox = boxArray.stream()
                 .filter(box -> box.weight > 200)
                 .collect(Collectors.toList());
@@ -174,34 +173,34 @@ public class Main {
 
     public static void task7() {
         Map<String, Toy> toyMap = new HashMap<>();
-        toyMap.put("машинка", new Toy(12, "с большими колесами", true));
-        toyMap.put("мишка", new Toy(342, "плюшевый", false));
-        toyMap.put("кукла", new Toy(10, "мужского пола", false));
-        toyMap.put("автомат", new Toy(777, "с боевыми патронами", true));
-        toyMap.put("молоток", new Toy(12, "без гвоздей", false));
+        toyMap.put("car", new Toy(12, "with big wheels", true));
+        toyMap.put("bear", new Toy(342, "plush", false));
+        toyMap.put("doll", new Toy(10, "male", false));
+        toyMap.put("weapon", new Toy(777, "with live ammunition", true));
+        toyMap.put("hammer", new Toy(12, "without nails", false));
 
         //не очень понял смысл в отдельных методах для перебора, но сделал
-        entrySet(toyMap);
-        keySet(toyMap);
-        values(toyMap);
+        printToys(toyMap);
+        printToysNames(toyMap);
+        printToysDetails(toyMap);
 
     }
 
-    public static void entrySet(Map<String,Toy> toyMap) {
+    public static void printToys(final Map<String, Toy> toyMap) {
         for (Object toy : toyMap.entrySet()) {
             System.out.println(toy);
         }
         System.out.println();
     }
 
-    public static void keySet(Map<String,Toy> toyMap) {
+    public static void printToysNames(final Map<String, Toy> toyMap) {
         for (Object toy : toyMap.keySet()) {
             System.out.println(toy);
         }
         System.out.println();
     }
 
-    public static void values(Map<String,Toy> toyMap) {
+    public static void printToysDetails(final Map<String, Toy> toyMap) {
         for (Object toy : toyMap.values()) {
             System.out.println(toy);
         }
@@ -210,11 +209,11 @@ public class Main {
 
     public static void task8() {
         ArrayList<Student> students = new ArrayList<>();
-        students.add(new Student("Максим", 192, 3, 10, 9, 10));
-        students.add(new Student("Владимир", 192, 2, 10, 10, 7));
-        students.add(new Student("Владислав", 194, 3, 1, 1, 1));
-        students.add(new Student("Юрий", 191, 1, 2, 3, 1));
-        students.add(new Student("Евгений", 192, 2, 3, 4, 3));
+        students.add(new Student("Maksim", 192, 3, 10, 9, 10));
+        students.add(new Student("Vladimir", 192, 2, 10, 10, 7));
+        students.add(new Student("Vladislav", 194, 3, 1, 1, 1));
+        students.add(new Student("Yuri", 191, 1, 2, 3, 1));
+        students.add(new Student("Evgeniy", 192, 2, 3, 4, 3));
 
         for (Object student : students) {
             System.out.println(student);
@@ -226,7 +225,7 @@ public class Main {
 
     }
 
-    public static void deleteIgnoramus(List<Student> students) {
+    public static void deleteIgnoramus(final List<Student> students) {
 
         List<Student> Ignoramus = students.stream()
                 .filter(student -> student.averageValue(student.math, student.biology, student.physics) < 3)
@@ -239,7 +238,7 @@ public class Main {
         System.out.println();
     }
 
-    public static void printStudents(List<Student> students, int course) {
+    public static void printStudents(final List<Student> students, final int course) {
         students.stream()
                 .filter(student -> student.course == course)
                 .forEach(System.out::println);
@@ -248,16 +247,16 @@ public class Main {
 
     public static void task9() {
         Map<String, Pet> pets = new HashMap<>();
-        pets.put("Барсик", new Cat("рыжий", 5, true));
-        pets.put("Бобик", new Dog("черный", 1, true));
-        pets.put("Мурза", new Cat("белый", 12, true));
-        pets.put("Какаду", new Parrot("красно-желтый", 2, false));
-        pets.put("Рэкс", new Dog("серый", 12, true));
+        pets.put("Barsik", new Cat("orange", 5, true));
+        pets.put("Bobik", new Dog("black", 1, true));
+        pets.put("Murza", new Cat("white", 12, true));
+        pets.put("Kakadu", new Parrot("red", 2, false));
+        pets.put("Max", new Dog("grey", 12, true));
         printPet(pets);
         System.out.println();
     }
 
-    public static void printPet(Map<String, Pet> pets) {
+    public static void printPet(final Map<String, Pet> pets) {
         for (String pet : pets.keySet()) {
             System.out.println(pet);
         }
@@ -272,7 +271,7 @@ public class Main {
 
     }
 
-    public static void removeEverySecondPerson(List<Integer> persons) {
+    public static void removeEverySecondPerson(final List<Integer> persons) {
         double startTime = System.nanoTime();
         for (int i = 0; i < 20; i++) {
             persons.add((int) (Math.random() * 100));

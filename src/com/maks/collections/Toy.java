@@ -1,11 +1,11 @@
 package com.maks.collections;
 
 public class Toy {
-    int model;
-    String view;
-    Boolean isMetal;
+    final int model;
+    final String view;
+    final Boolean isMetal;
 
-    public Toy(int model, String view, Boolean isMetal) {
+    public Toy(final int model, final String view, final Boolean isMetal) {
         this.model = model;
         this.view = view;
         this.isMetal = isMetal;
