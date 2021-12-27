@@ -30,6 +30,7 @@ public class Registration {
         for (User user : users) {
             System.out.println(user.toString());
         }
+        in.close();
     }
 
     public static boolean verificationData(final String login, final String password, final String confirmPassword) {
