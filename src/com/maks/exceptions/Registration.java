@@ -9,8 +9,8 @@ public class Registration {
     private static final String PATTERN = "[a-zA-Z_0-9]{1,20}";
 
     public static void main(String[] args) {
-        List<User> users = new ArrayList<>();
-        Scanner in = new Scanner(System.in);
+        final List<User> users = new ArrayList<>();
+        final Scanner in = new Scanner(System.in);
         String login;
         String password;
         String confirmPassword;
@@ -23,7 +23,7 @@ public class Registration {
             System.out.println("Confirm password");
             confirmPassword = in.nextLine();
 
-            if (verificationData(login, password, confirmPassword)) {
+            if (isValidateData(login, password, confirmPassword)) {
                 users.add(new User(login, password));
             }
         }
@@ -33,12 +33,15 @@ public class Registration {
         in.close();
     }
 
-    public static boolean verificationData(final String login, final String password, final String confirmPassword) {
+    public static boolean isValidateData(final String login, final String password, final String confirmPassword) {
         try {
             validateLogin(login);
             validatePassword(password, confirmPassword);
             return true;
-        } catch (WrongLoginException | WrongPasswordException e) {
+        } catch (WrongLoginException e) {
+            System.err.println(e.getMessage());
+            return false;
+        } catch (WrongPasswordException e) {
             System.err.println(e.getMessage());
             return false;
         }
@@ -55,5 +58,5 @@ public class Registration {
             throw new WrongPasswordException("The password does not meet the conditions");
         }
     }
-    
+
 }
