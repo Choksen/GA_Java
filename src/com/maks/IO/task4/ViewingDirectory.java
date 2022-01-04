@@ -3,7 +3,7 @@ package com.maks.IO.task4;
 import java.io.File;
 import java.util.Objects;
 
-public class viewingDirectory {
+public class ViewingDirectory {
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_GREEN = "\u001B[32m";
@@ -19,5 +19,8 @@ public class viewingDirectory {
                 System.out.println(file.getName() + " : unknown");
             }
         }
+    }
+
+    private ViewingDirectory() {
     }
 }

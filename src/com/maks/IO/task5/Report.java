@@ -7,11 +7,13 @@ public class Report {
     public static void generateReport(final List<Staff> staffList) {
         final PrintWriter writer = new PrintWriter(System.out);
         for (final Staff employee : staffList) {
-            System.out.format("%s %s - salary %d \n",
+            writer.format("FullName: %s %s - salary %d \n",
                     employee.getName(),
                     employee.getSurname(),
                     employee.getSalary());
         }
+        writer.close();
+
     }
 
     public static void createFileStaff(final List<Staff> staffList, final File fileOutput) {

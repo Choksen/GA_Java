@@ -31,5 +31,8 @@ public class CopyFileToFile {
             System.err.println(e.getMessage());
         }
     }
+
+    private CopyFileToFile() {
+    }
 }
 

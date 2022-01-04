@@ -1,18 +1,17 @@
 package com.maks.IO;
 
 import com.maks.IO.task3.CopyFileToFile;
-import com.maks.IO.task4.viewingDirectory;
+import com.maks.IO.task4.ViewingDirectory;
 import com.maks.IO.task5.Report;
 import com.maks.IO.task5.Staff;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(final String[] args) {
         //task3
         File fileInput = new File("src/com/maks/IO/task3/files/fileInput");
         File fileOutput = new File("src/com/maks/IO/task3/files/fileOutput");
@@ -32,7 +31,7 @@ public class Main {
 
         //task4
         final File directory = new File("src/com/maks/IO/task4/dir");
-        viewingDirectory.printDir(directory);
+        ViewingDirectory.printDir(directory);
 
         //task5
         List<Staff> staffList = new ArrayList<>();
