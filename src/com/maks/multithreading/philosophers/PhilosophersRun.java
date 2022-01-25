@@ -1,9 +1,10 @@
 package com.maks.multithreading.philosophers;
 
 public class PhilosophersRun {
+    private static final int COUNT = 5;
     public static void main(final String[] args) {
-        final Philosopher[] philosophers = new Philosopher[5];
-        final Object[] forks = new Object[5];
+        final Philosopher[] philosophers = new Philosopher[COUNT];
+        final Object[] forks = new Object[COUNT];
 
         for (int i = 0; i < forks.length; i++) {
             forks[i] = new Object();
