@@ -4,7 +4,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class AddClient implements Runnable {
-    private BlockingQueue<Integer> clients;
+    private final BlockingQueue<Integer> clients;
     private int count = 1;
 
     public AddClient(final BlockingQueue<Integer> clients) {

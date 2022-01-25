@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fad35b14-1d0f-4191-b08b-596555898a93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GA_Java/META-INF/GA_Java.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GA_Java/com/maks/IO/task3/files/bufferedFileOutput" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GA_Java/com/maks/IO/task3/files/bufferedFileOutput" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GA_Java/com/maks/IO/task5/files/fileStaff" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GA_Java/com/maks/IO/task5/files/fileStaff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/maks/IO/task3/files/bufferedFileOutput" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/maks/IO/task3/files/bufferedFileOutput" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/maks/IO/task5/files/fileStaff" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/maks/IO/task5/files/fileStaff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/maks/multithreading/callCenter/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/maks/multithreading/callCenter/Operator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +134,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1643111251709</updated>
-      <workItem from="1643111253117" duration="11985000" />
+      <workItem from="1643111253117" duration="12286000" />
     </task>
     <servers />
   </component>

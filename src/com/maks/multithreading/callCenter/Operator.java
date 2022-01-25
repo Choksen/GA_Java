@@ -5,8 +5,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Operator implements Runnable {
 
-    private BlockingQueue<Integer> clients;
-    private int id;
+    private final BlockingQueue<Integer> clients;
+    private final int id;
 
     public Operator(final BlockingQueue<Integer> clients, final int id) {
         this.clients = clients;
